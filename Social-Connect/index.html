@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Hub - Your Digital Identity</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body data-theme="superman">
+    <!-- Custom Cursor -->
+    <div class="custom-cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-outline"></div>
+    </div>
+
+    <!-- Background Anime
+     -->
+    <div class="background-elements">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        <div class="floating-shape shape-4"></div>
+        <div class="floating-shape shape-5"></div>
+        
+        <!-- Animated particles -->
+        <div class="particles-container">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        
+        <!-- Dynamic gradient overlay -->
+        <div class="dynamic-gradient"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-text">Personal Hub</span>
+                <div class="brand-glow"></div>
+            </div>
+            <div class="nav-actions">
+                <div class="theme-indicator">
+                    <span class="theme-name">Superman Mode</span>
+                    <div class="theme-icon">
+                        <i class="fas fa-sun superman-icon"></i>
+                        <i class="fas fa-moon batman-icon"></i>
+                    </div>
+                </div>
+                <button class="admin-toggle" id="adminToggle">
+                    <i class="fas fa-cog"></i>
+                    <span>Admin</span>
+                    <div class="btn-ripple"></div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="profile-image-container">
+                    <div class="profile-image">
+                        <img src="https://images.wallpapersden.com/image/download/happiest-anime-girl-hd-ai-art_bmVsZmyUmZqaraWkpJRmbmpnrWZmZ2U.jpg" alt="Profile" id="profileImg">
+                        <div class="profile-ring"></div>
+                        <div class="profile-glow"></div>
+                    </div>
+                </div>
+                <h1 class="hero-name gradient-text typewriter" id="profileName">Anikesh Kumar</h1>
+                <p class="hero-title slide-up" id="profileTitle">Web Developer & 3D Animator</p>
+                <p class="hero-bio slide-up" id="profileBio">Passionate about creating amazing digital experiences and building meaningful connections across platforms.</p>
+                
+                <div class="hero-actions slide-up">
+                    <button class="btn btn--primary pulse-btn ripple-btn">
+                        <i class="fas fa-envelope"></i>
+                        <span>Get In Touch</span>
+                        <div class="btn-ripple"></div>
+                    </button>
+                    <button class="btn btn--secondary ripple-btn" onclick="document.getElementById('social-links').scrollIntoView({behavior: 'smooth'})">
+                        <i class="fas fa-link"></i>
+                        <span>View Links</span>
+                        <div class="btn-ripple"></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- Social Links Hub -->
+    <section class="social-links section-animate" id="social-links">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title reveal-text">Connect With Me</h2>
+                <p class="section-subtitle fade-in-up">Find me across all platforms</p>
+                <button class="btn btn--sm admin-only hidden ripple-btn" id="addLinkBtn">
+                    <i class="fas fa-plus"></i>
+                    <span>Add Link</span>
+                    <div class="btn-ripple"></div>
+                </button>
+            </div>
+            <div class="links-grid" id="linksGrid">
+                <!-- Social links will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog/Vlog Section -->
+    <section class="blog-section section-animate" id="blog">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title reveal-text">Latest Posts</h2>
+                <p class="section-subtitle fade-in-up">My thoughts, projects, and updates</p>
+                <div class="blog-controls fade-in-up">
+                    <div class="search-container">
+                        <i class="fas fa-search"></i>
+                        <input type="text" class="search-input" placeholder="Search posts..." id="searchInput">
+                        <div class="input-glow"></div>
+                    </div>
+                    <select class="filter-select" id="categoryFilter">
+                        <option value="">All Categories</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Work">Work</option>
+                        <option value="Thoughts">Thoughts</option>
+                        <option value="Updates">Updates</option>
+                    </select>
+                    <button class="btn btn--primary admin-only hidden ripple-btn" id="createPostBtn">
+                        <i class="fas fa-plus"></i>
+                        <span>New Post</span>
+                        <div class="btn-ripple"></div>
+                    </button>
+                </div>
+            </div>
+            <div class="posts-container" id="postsContainer">
+                <!-- Blog posts will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Analytics Section (Admin Only) -->
+    <section class="analytics admin-only hidden section-animate" id="analytics">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title reveal-text">Analytics Dashboard</h2>
+                <p class="section-subtitle fade-in-up">Track your performance</p>
+            </div>
+            <div class="analytics-grid">
+                <div class="analytics-card glass-card hover-float">
+                    <div class="analytics-icon">
+                        <i class="fas fa-mouse-pointer"></i>
+                    </div>
+                    <div class="analytics-content">
+                        <h3 id="totalClicks">829</h3>
+                        <p>Total Clicks</p>
+                    </div>
+                    <div class="card-glow"></div>
+                </div>
+                <div class="analytics-card glass-card hover-float">
+                    <div class="analytics-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="analytics-content">
+                        <h3 id="monthlyVisitors">1,247</h3>
+                        <p>Monthly Visitors</p>
+                    </div>
+                    <div class="card-glow"></div>
+                </div>
+                <div class="analytics-card glass-card hover-float">
+                    <div class="analytics-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="analytics-content">
+                        <h3 id="topPlatform">LinkedIn</h3>
+                        <p>Top Platform</p>
+                    </div>
+                    <div class="card-glow"></div>
+                </div>
+                <div class="analytics-card glass-card hover-float">
+                    <div class="analytics-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="analytics-content">
+                        <h3 id="engagementRate">73%</h3>
+                        <p>Engagement Rate</p>
+                    </div>
+                    <div class="card-glow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals -->
+    <!-- Add/Edit Link Modal -->
+    <div class="modal hidden" id="linkModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content glass-card">
+            <div class="modal-header">
+                <h3 id="linkModalTitle">Add New Link</h3>
+                <button class="modal-close ripple-btn" id="closeLinkModal">
+                    <i class="fas fa-times"></i>
+                    <div class="btn-ripple"></div>
+                </button>
+            </div>
+            <form class="modal-body" id="linkForm">
+                <div class="form-group">
+                    <label class="form-label">Platform Name</label>
+                    <input type="text" class="form-control" id="platformName" required>
+                    <div class="input-glow"></div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">URL</label>
+                    <input type="url" class="form-control" id="platformUrl" required>
+                    <div class="input-glow"></div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Icon Class (Font Awesome)</label>
+                    <input type="text" class="form-control" id="platformIcon" placeholder="e.g., fab fa-linkedin">
+                    <div class="input-glow"></div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Brand Color</label>
+                    <input type="color" class="form-control" id="platformColor" value="#0077b5">
+                    <div class="input-glow"></div>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn--secondary ripple-btn" id="cancelLinkForm">
+                        <span>Cancel</span>
+                        <div class="btn-ripple"></div>
+                    </button>
+                    <button type="submit" class="btn btn--primary ripple-btn">
+                        <span>Save Link</span>
+                        <div class="btn-ripple"></div>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Create/Edit Post Modal -->
+    <div class="modal hidden" id="postModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content glass-card">
+            <div class="modal-header">
+                <h3 id="postModalTitle">Create New Post</h3>
+                <button class="modal-close ripple-btn" id="closePostModal">
+                    <i class="fas fa-times"></i>
+                    <div class="btn-ripple"></div>
+                </button>
+            </div>
+            <form class="modal-body" id="postForm">
+                <div class="form-group">
+                    <label class="form-label">Title</label>
+                    <input type="text" class="form-control" id="postTitle" required>
+                    <div class="input-glow"></div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Category</label>
+                    <select class="form-control" id="postCategory" required>
+                        <option value="">Select Category</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Work">Work</option>
+                        <option value="Thoughts">Thoughts</option>
+                        <option value="Updates">Updates</option>
+                    </select>
+                    <div class="input-glow"></div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Content</label>
+                    <textarea class="form-control" id="postContent" rows="6" required></textarea>
+                    <div class="input-glow"></div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Featured Image URL</label>
+                    <input type="url" class="form-control" id="postImage" placeholder="https://example.com/image.jpg">
+                    <div class="input-glow"></div>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn--secondary ripple-btn" id="cancelPostForm">
+                        <span>Cancel</span>
+                        <div class="btn-ripple"></div>
+                    </button>
+                    <button type="submit" class="btn btn--primary ripple-btn">
+                        <span>Publish Post</span>
+                        <div class="btn-ripple"></div>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; By Anikesh Kumar | In 2025 | Built with passion for digital connection | Personal Hub</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
